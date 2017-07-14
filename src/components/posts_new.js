@@ -4,8 +4,10 @@ class PostsNew extends Component {
   render() {
     return (
       <div>
-        placeholder
+        <h2>Placeholder text</h2>
       </div>
     );
   }
 }
+
+export default PostsNew;
