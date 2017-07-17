@@ -11,7 +11,7 @@ class PostsNew extends Component {
           type="text"
           {...field.input}
         />
-        {field.meta.error}
+      {field.meta.touched ? field.meta.error : ''}
       </div>
     );
   }
@@ -32,7 +32,7 @@ class PostsNew extends Component {
         />
         <Field
           label="Categories"
-          name="categories "
+          name="categories"
           component={this.renderField}
         />
         <Field
@@ -53,8 +53,8 @@ function validate(values) {
   if (!values.title) {
     errors.title = 'Enter a title'
   }
-  if (!values.categorise) {
-    errors.categorise = 'Enter a categorise'
+  if (!values.categories) {
+    errors.categories = 'Enter a categorise'
   }
   if (!values.content) {
     errors.content = 'Enter some content'
