@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Field, reduxForm } from 'redux-form';
+import { Link } from 'react-router-dom';
 
 class PostsNew extends Component {
   renderField(field) {
@@ -14,7 +15,7 @@ class PostsNew extends Component {
           type="text"
           {...field.input}
         />
-        <div className="text-help"> 
+        <div className="text-help">
           {touched ? error : ''}
         </div>
       </div>
@@ -47,6 +48,10 @@ class PostsNew extends Component {
         />
 
         <button type="submit" className="btn btn-primary">Submit</button>
+
+        <Link className="btn btn-danger" to="/">
+          Back to Posts Index
+        </Link>
       </form>
     );
   }
@@ -59,7 +64,7 @@ function validate(values) {
     errors.title = 'Enter a title'
   }
   if (!values.categories) {
-    errors.categories = 'Enter a categorise'
+    errors.categories = 'Enter a category'
   }
   if (!values.content) {
     errors.content = 'Enter some content'
