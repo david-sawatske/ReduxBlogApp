@@ -42,7 +42,7 @@ export function deletePost(id, callback) {
     .then(() => callback());
 
   return {
-    type: FETCH_POST,
+    type: DELETE_POST,
     payload: id
   };
 }
